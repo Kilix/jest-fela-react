@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-test-renderer 1`] = `
+.fovk07z> div {
+  font-weight: 500;
+}
+
+.fovk07z {
+  border: solid 1px black;
+}
+
+.f16lnj6g {
+  color: red;
+  font-size: 16px;
+}
+
+<div
+  className="fovk07z"
+>
+  <div
+    className="f16lnj6g"
+  >
+    Hello World
+  </div>
+</div>
+`;

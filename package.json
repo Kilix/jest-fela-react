@@ -1,0 +1,67 @@
+{
+    "name": "jest-fela-react",
+    "version": "0.0.1",
+    "description": "Nicer snapshots when using jest and fela",
+    "main": "lib/index.js",
+    "scripts": {
+        "prebuild": "rimraf lib/",
+        "build": "babel src --out-dir lib --ignore '**/__tests__/**'",
+        "test": "jest --watch",
+        "test:ci": "jest --coverage && codecov",
+        "lint": "eslint ./src",
+        "precommit": "lint-staged",
+        "prepublishOnly": "npm run build",
+        "format": "prettier --trailing-comma all --single-quote --tab-width 4 --print-width 100 --write 'src/**/*.js'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kilix/jest-fela-react.git"
+    },
+    "keywords": [],
+    "files": ["lib"],
+    "author": "aulefevre@kilix.fr",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-cli": "^6.23.0",
+        "babel-cli-flow": "^1.0.0",
+        "babel-core": "^6.23.1",
+        "babel-eslint": "^7.2.0",
+        "babel-plugin-transform-flow-strip-types": "^6.22.0",
+        "babel-plugin-transform-object-rest-spread": "^6.23.0",
+        "babel-preset-env": "^1.1.8",
+        "codecov": "^2.3.0",
+        "cross-env": "^5.0.5",
+        "eslint": "^4.4.1",
+        "eslint-config-airbnb": "^15.1.0",
+        "eslint-plugin-flowtype": "^2.35.0",
+        "eslint-plugin-import": "2.7",
+        "eslint-plugin-jsx-a11y": "5.1.1",
+        "eslint-plugin-react": "7.2",
+        "fela-monolithic": "^5.0.6",
+        "flow-bin": "^0.52.0",
+        "husky": "^0.14.3",
+        "jest": "^20.0.4",
+        "lint-staged": "^4.0.3",
+        "npm-run-all": "^4.0.2",
+        "prettier": "^1.5.3",
+        "react": "^15.6.1",
+        "react-test-renderer": "^15.6.1",
+        "rimraf": "^2.6.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1"
+    },
+    "dependencies": {
+        "css": "^2.2.1",
+        "fela-tools": "^5.0.6"
+    },
+    "peerDependencies": {
+        "react-fela": "^5.2.1",
+        "fela": "^5.1.1"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --trailing-comma all --single-quote --tab-width 4 --print-width 100 --write",
+            "git add"
+        ]
+    }
+}
