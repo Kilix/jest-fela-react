@@ -1,6 +1,6 @@
 {
     "name": "jest-fela-react",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Nicer snapshots when using jest and fela",
     "main": "lib/index.js",
     "scripts": {
@@ -18,7 +18,9 @@
         "url": "git+https://github.com/kilix/jest-fela-react.git"
     },
     "keywords": [],
-    "files": ["lib"],
+    "files": [
+        "lib"
+    ],
     "author": "aulefevre@kilix.fr",
     "license": "MIT",
     "devDependencies": {
