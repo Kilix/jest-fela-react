@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-test-renderer 1`] = `
+.a {
+  border: solid 1px black;
+}
+
+.b> div {
+  font-weight: 500;
+}
+
+.c {
+  color: red;
+}
+
+.d {
+  font-size: 16px;
+}
+
+<div
+  className="a b"
+>
+  <div
+    className="c d"
+  >
+    Hello World
+  </div>
+</div>
+`;

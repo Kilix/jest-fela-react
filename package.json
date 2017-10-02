@@ -18,9 +18,7 @@
         "url": "git+https://github.com/kilix/jest-fela-react.git"
     },
     "keywords": [],
-    "files": [
-        "lib"
-    ],
+    "files": ["lib"],
     "author": "aulefevre@kilix.fr",
     "license": "MIT",
     "devDependencies": {
@@ -40,6 +38,8 @@
         "eslint-plugin-jsx-a11y": "5.1.1",
         "eslint-plugin-react": "7.2",
         "fela-monolithic": "^5.0.6",
+        "react-fela": "^5.2.1",
+        "fela": "^5.1.1",
         "flow-bin": "^0.52.0",
         "husky": "^0.14.3",
         "jest": "^20.0.4",
