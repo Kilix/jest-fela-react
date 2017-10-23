@@ -1,15 +1,26 @@
 import css from 'css';
 import { renderToString } from 'fela-tools';
 
-function getSelectors(node) {
-    let selectors = [];
-    if (node.children && node.children.reduce) {
-        selectors = node.children.reduce((acc, child) => acc.concat(getSelectors(child)), []);
+function getNodes(node, nodes = []) {
+    if (node.children) {
+        node.children.forEach(child => getNodes(child, nodes));
     }
-    if (node.props) {
-        return getSelectorsFromProps(selectors, node.props);
+
+    if (typeof node === 'object') {
+        nodes.push(node);
     }
-    return selectors;
+
+    return nodes;
+}
+
+function markNodes(nodes) {
+    nodes.forEach(node => {
+        node.withStyles = true;
+    });
+}
+
+function getSelectors(nodes) {
+    return nodes.reduce((selectors, node) => getSelectorsFromProps(selectors, node.props), []);
 }
 
 function getSelectorsFromProps(selectors, props) {
@@ -67,13 +78,14 @@ function getMediaQueries(ast, filter) {
 const createSerializer = felaRenderer => {
     return {
         test: val => {
-            return val && !val.withStyle && val.$$typeof === Symbol.for('react.test.json');
+            return val && !val.withStyles && val.$$typeof === Symbol.for('react.test.json');
         },
         print: (val, print) => {
-            val.withStyle = true;
+            const nodes = getNodes(val);
+            markNodes(nodes);
+            const selectors = getSelectors(nodes);
 
             const code = print(val);
-            const selectors = getSelectors(val);
             const style = getStyles(selectors, renderToString(felaRenderer));
             let result = `${style}${style ? '\n\n' : ''}${code}`;
 
