@@ -37,9 +37,9 @@
         "eslint-plugin-import": "2.7",
         "eslint-plugin-jsx-a11y": "5.1.1",
         "eslint-plugin-react": "7.2",
-        "fela-monolithic": "^5.0.6",
-        "react-fela": "^5.2.1",
-        "fela": "^5.1.1",
+        "fela-monolithic": "^5.0.11",
+        "react-fela": "^6.0.3",
+        "fela": "^6.0.3",
         "flow-bin": "^0.52.0",
         "husky": "^0.14.3",
         "jest": "^20.0.4",
@@ -54,11 +54,11 @@
     },
     "dependencies": {
         "css": "^2.2.1",
-        "fela-tools": "^5.0.6"
+        "fela-tools": "^5.0.11"
     },
     "peerDependencies": {
-        "react-fela": "^5.2.1",
-        "fela": "^5.1.1"
+        "react-fela": "^5 || ^6",
+        "fela": "^5 || ^6"
     },
     "lint-staged": {
         "*.js": [
